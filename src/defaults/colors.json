@@ -12,7 +12,7 @@
     "dark": "#ffffff"
   },
   "content-secondary": {
-    "DEFAULT": "#f8f9fa",
+    "DEFAULT": "#4b4b4b",
     "dark": "#f8f9fa"
   },
   "highlight": {

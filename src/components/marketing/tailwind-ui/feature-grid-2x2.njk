@@ -1,0 +1,51 @@
+{# Feature Section Component #}
+<div class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+            {# Overline #}
+            {% if data.overline -%}
+                <h2 class="text-base/7 font-semibold text-highlight">
+                    {{ data.overline }}
+                </h2>
+            {%- endif %}
+
+            {# Headline #}
+            {% if data.headline -%}
+                <p class="mt-2 text-4xl font-semibold tracking-tight text-content text-gray-900 sm:text-5xl lg:text-balance">
+                    {{ data.headline }}
+                </p>
+            {%- endif %}
+
+            {# Description #}
+            {% if data.description -%}
+                <p class="mt-6 text-lg/8 text-content-secondary">
+                    {{ data.description }}
+                </p>
+            {%- endif %}
+        </div>
+
+        {# Features in alternating layout #}
+        {% if data.features -%}
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                    {% for feature in data.features -%}
+                        {% if feature.title and feature.description -%}
+                            <div class="relative pl-16">
+                                <dt class="text-base/7 font-semibold text-content">
+                                    {# Icon Container #}
+                                    <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-background">
+                                        <svg class="size-6 text-highlight" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="{{ feature.icon }}"/>
+                                        </svg>
+                                    </div>
+                                    {{ feature.title }}
+                                </dt>
+                                <dd class="mt-2 text-base/7 text-content-secondary">{{ feature.description }}</dd>
+                            </div>
+                        {%- endif %}
+                    {%- endfor %}
+                </dl>
+            </div>
+        {%- endif %}
+    </div>
+</div>

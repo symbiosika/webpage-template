@@ -36,6 +36,14 @@ Alle Variablen für den Header.
 
 ### Erstelle Komponenten über Tailwind UI Muster
 
+#### Anweisung
+
+Man kopiert den untenstehenden Code in den Prompt als Referenz.
+DARUNTER dann noch die Anweisung:
+"Du erstellst eine Komponente für folgendes Muster: <muster-code-von-tailwind-ui>"
+
+#### Main-Prompt
+
 Du erstellst eine Marketing Komponente für Eleventy JS.
 Die Komponente ist dynamisch und wird in verschiedenen Kontexten in einer Parent-Seite eingebunden. Die Basis Variable ist "data". Alle genutzten Variablen sind in "data" definiert.
 Die Variable "data" wird aus dem Parent vergeben.
@@ -81,8 +89,7 @@ Der Default kommt aus dem Parent.
 
 > Der "dark" Mode muss immer explizit mit angegeben werden!
 
-Du erstellst eine Komponente für folgendes Muster:
-<...hier der html code des musters...>
+
 
 ## Inspiration
 

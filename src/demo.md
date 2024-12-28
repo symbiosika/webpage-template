@@ -5,7 +5,7 @@ layout: layout/header-content-footer_1_with-border.njk
 #
 # Ab hier folgen Variablen für die Komponenten
 # Pro Block werden bestimmte Variablen benötigt, hier mit Musterdaten befüllt
-# 
+#
 # tailwind-ui/feature-section-1
 data1:
   tagline: "Deploy faster"
@@ -38,7 +38,7 @@ data_feature_2:
     - icon: "🚀"
       title: "Push to deploy"
       description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna."
-    - icon: "🚀"          
+    - icon: "🚀"
       title: "SSL certificates"
       description: "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo."
     - icon: "🚀"
@@ -65,46 +65,69 @@ data_bento_grid_1:
       imageAlt: "Performance visualization"
       label: "Performance"
       title: "Lightning-fast builds"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus egestas sem pellentesque."    
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus egestas sem pellentesque."
     - image: "https://tailwindui.com/plus/img/component-images/bento-01-releases.png"
       imageAlt: "Releases visualization"
       label: "Releases"
       title: "Push to deploy"
-      description: "Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio."    
+      description: "Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae odio."
     - image: "https://tailwindui.com/plus/img/component-images/bento-01-speed.png"
       imageAlt: "Speed visualization"
       label: "Speed"
       title: "Built for power users"
-      description: "Sed congue eros non finibus molestie. Vestibulum euismod augue."    
+      description: "Sed congue eros non finibus molestie. Vestibulum euismod augue."
     - image: "https://tailwindui.com/plus/img/component-images/bento-01-integrations.png"
       imageAlt: "Integrations visualization"
       label: "Integrations"
       title: "Connect your favorite tools"
-      description: "Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus arcu."    
+      description: "Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus arcu."
     - image: "https://tailwindui.com/plus/img/component-images/bento-01-network.png"
       imageAlt: "Network visualization"
       label: "Network"
       title: "Globally distributed CDN"
       description: "Aenean vulputate justo commodo auctor vehicula in malesuada semper."
+
+# tailwind-ui/feature-grid-2x2
+data_feature_grid_2x2:
+  overline: "Lorem ipsum Overline"
+  headline: "Lorem ipsum Headline"
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  features:
+    - title: "Lorem ipsum 1"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      icon: "M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
+    - title: "Lorem ipsum 2"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      icon: "M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+    - title: "Lorem ipsum 3"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      icon: "M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
+    - title: "Lorem ipsum 4"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      icon: "M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
 ---
 
 ## Komponente "tailwind-ui/feature-section-1"
 
 {% set data = data1 %}
-{% include "src/components/marketing/tailwind-ui/feature-section-1.njk" %}
+{% include "marketing/tailwind-ui/feature-section-1.njk" %}
 
 ## Komponente "tailwind-ui/feature-section-2"
 
 {% set data = data_feature_2 %}
-{% include "src/components/marketing/tailwind-ui/feature-section-2.njk" %}
+{% include "marketing/tailwind-ui/feature-section-2.njk" %}
 
 ## Komponente "tailwind-ui/testimonials-1"
 
 {% set data = data_testimonials_1 %}
-{% include "src/components/marketing/tailwind-ui/testimonials-1.njk" %}
+{% include "marketing/tailwind-ui/testimonials-1.njk" %}
 
 ## Komponente "tailwind-ui/bento-grid-1"
 
 {% set data = data_bento_grid_1 %}
-{% include "src/components/marketing/tailwind-ui/bento-grid-1.njk" %}
+{% include "marketing/tailwind-ui/bento-grid-1.njk" %}
 
+## Komponente "tailwind-ui/feature-grid-2x2"
+
+{% set data = data_feature_grid_2x2 %}
+{% include "marketing/tailwind-ui/feature-grid-2x2.njk" %}
