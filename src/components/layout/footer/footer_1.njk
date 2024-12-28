@@ -1,13 +1,13 @@
-<footer class="z-50 pt-5 border-t border-gray-200 text-center text-base text-gray-800">
+<div class="z-50 pt-5 border-gray-200 text-content dark:text-content-dark text-center text-base">
     <div class="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-0">
         {% for item in footer.navigation %}
             {% if not loop.first %}
                 <span class="hidden sm:inline mx-2">|</span>
             {% endif %}
-            <a href="{{ item.url }}" class="text-gray-800 hover:text-primary-900">{{ item.title }}</a>
+            <a href="{{ item.url }}" class="text-content dark:text-content-dark hover:text-highlight hover:dark:text-highlight-dark">{{ item.title }}</a>
         {% endfor %}
     </div>
     <p class="pt-1 text-sm">&copy; {{ '' | year }} -
-        <a href="{{ footer.company.url }}" target="_blank" class="text-primary-600 hover:text-primary-900">{{ footer.company.name }}</a>
+        <a href="{{ footer.company.url }}" target="_blank" class="text-highlight dark:text-highlight-dark hover:text-highlight-secondary hover:dark:text-highlight-secondary-dark">{{ footer.company.name }}</a>
     </p>
-</footer>
+</div>

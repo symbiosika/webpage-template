@@ -2,14 +2,14 @@
     <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
         <div class="lg:pr-8 lg:pt-4">
             <div class="lg:max-w-lg">
-                <h2 class="text-base/7 font-semibold text-primary-600">{{ data.tagline }}</h2>
-                <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{ data.heading }}</p>
-                <p class="mt-6 text-lg/8 text-gray-600">{{ data.description }}</p>
-                <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
+                <h2 class="text-base/7 font-semibold text-highlight dark:text-highlight-dark">{{ data.tagline }}</h2>
+                <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-content dark:text-content-dark sm:text-5xl">{{ data.heading }}</p>
+                <p class="mt-6 text-lg/8 text-content-secondary dark:text-content-secondary-dark">{{ data.description }}</p>
+                <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-content-secondary dark:text-content-secondary-dark lg:max-w-none">
                     {% for feature in data.features %}
                         <div class="relative pl-9">
-                            <dt class="inline font-semibold text-gray-900">
-                                <span class="absolute left-1 top-1 size-5 text-primary-600">
+                            <dt class="inline font-semibold text-content dark:text-content-dark">
+                                <span class="absolute left-1 top-1 size-5 text-highlight dark:text-highlight-dark">
                                     {{ feature.icon }}
                                 </span>
                                 {{ feature.title }}

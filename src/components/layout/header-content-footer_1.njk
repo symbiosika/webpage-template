@@ -2,10 +2,12 @@
 layout: layout/base/html.njk
 ---
 
-<header>
+<header class="bg-background dark:bg-background-dark">
     {% include "layout/header/navbar_1.njk" %}
 </header>
-<div>
+<div class="min-h-screen bg-background-secondary dark:bg-background-secondary-dark text-content dark:text-content-dark pb-5">
     {{ content | safe }}
 </div>
-{% include "layout/footer/footer_1.njk" %}
+<footer class="bg-background dark:bg-background-dark text-content dark:text-content-dark pb-5">
+    {% include "layout/footer/footer_1.njk" %}
+</footer>

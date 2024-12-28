@@ -32,7 +32,6 @@ Alle Variablen für den Footer.
 
 Alle Variablen für den Header.
 
-
 ## Prompts
 
 ### Erstelle Komponenten über Tailwind UI Muster
@@ -64,7 +63,25 @@ data:
 Du wirst die Komponente aus folgendem Muster erstellen.
 Du wist dabei strikt die Optik beibehalten aber alle Inhalte dynamisieren.
 
-Muster:
+Alle Farben basieren auf den Textfarben:
+
+Light: "text-content" und "text-content-secondary"
+Dark: "dark:text-content-dark" und "dark:text-content-secondary-dark"
+
+Akzentfarben
+Light: "text-highlight" und "text-highlight-secondary"
+Dark: "dark:text-highlight-dark" und "dark:text-highlight-secondary-dark"
+
+Falls Hintergrundfarben benötigt werden, dann:
+Light: "bg-background" und "bg-background-secondary"
+Dark: "dark:bg-background-dark" und "dark:bg-background-secondary-dark"
+
+Hintergrundfarben müssen nur angegeben werden, wenn sich der Hintergrund explizit unterscheiden muss.
+Der Default kommt aus dem Parent.
+
+> Der "dark" Mode muss immer explizit mit angegeben werden!
+
+Du erstellst eine Komponente für folgendes Muster:
 <...hier der html code des musters...>
 
 ## Inspiration
