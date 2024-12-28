@@ -1,7 +1,7 @@
 ---
 title: Datenschutz
 description: Datenschutzerklärung
-layout: simple-text-page.njk
+layout: layout/header-content-footer_1_small-width-content.njk
 ---
 
 ## Seite 2

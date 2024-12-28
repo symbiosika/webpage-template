@@ -34,7 +34,7 @@ module.exports = function (config) {
     markdownTemplateEngine: "njk",
     dir: {
       input: "src",
-      includes: "templates",
+      includes: "components",
       data: "defaults",
       output: "dist",
     },

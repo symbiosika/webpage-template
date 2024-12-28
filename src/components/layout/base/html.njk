@@ -1,3 +1,7 @@
+<!-- Base layout: Umschreibt jede Seite mit den nötigen HTML-Tags und CSS-Dateien, die erforderlich sind um alle Seiten
+und Styles zu laden.
+
+Wenn neue globale Styles, Icons, etc. benötigt werden, sollte diese Datei erweitert werden. -->
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,8 +16,8 @@
       {{ config.siteTitle }}</title>
     <!-- Icons -->
     <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
-    <link rel="apple-touch-icon" type="image/png" href="/images/logo.png"/>
-    <!-- Meta -->
+    <link
+    rel="apple-touch-icon" type="image/png" href="/images/logo.png"/> <!-- Meta -->
     <meta name="description" content="{% if description %}{{ description }}{% else %}{{ config.description }}{% endif %}">
     <meta name="keywords" content="{% if keywords %}{{ keywords }}{% else %}{{ config.keywords }}{% endif %}">
     <meta charset="utf-8">
@@ -22,12 +26,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
   <body>
-    <header>
-      {% include "navbar.njk" %}
-    </header>
-    <div>
-      {{ content | safe }}
-    </div>
-    {% include "footer.njk" %}
+    {{ content | safe }}
   </body>
 </html>

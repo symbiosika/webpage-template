@@ -1,0 +1,11 @@
+{
+  "company": {
+    "name": "Meine Firma GmbH",
+    "url": "/impressum"
+  },
+  "navigation": [
+    { "title": "Seite 11", "url": "/seite-1" },
+    { "title": "Seite 22", "url": "/seite-2" },
+    { "title": "Seite 33", "url": "/seite-3" }
+  ]
+}
