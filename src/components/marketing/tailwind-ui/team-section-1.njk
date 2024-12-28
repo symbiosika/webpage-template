@@ -13,15 +13,9 @@
             <div class="flex items-center gap-x-6">
                 <img class="size-16 rounded-full" src="{{ person.image | trim }}" alt="{{ person.name | trim }}">
                     <div>
-                        <h3 class="text-base/7 font-semibold tracking-tight text-content dark:text-content-dark">
+                        <h3 class="text-base/7 font-semibold tracking-tight text-content dark:text-content-dark mb-0">
                                 {{ person.name | trim }}
-                            </h3>
-                            {% set role = person.role | trim %}
-                            {% if role %}
-                                <p class="text-sm/6 font-semibold text-highlight dark:text-highlight-dark">
-                                    {{ role | trim }}
-                                </p>
-                            {% endif %}
+                            </h3>{% set role = person.role | trim %}{% if role %}<p class="text-sm font-semibold text-highlight dark:text-highlight-dark mb-0 mt-0">{{ role | trim }}</p>{% endif %}
                         </div>
                     </div>
         </li>{% endfor %}
