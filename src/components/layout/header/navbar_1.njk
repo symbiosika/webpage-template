@@ -1,10 +1,10 @@
 <nav class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-white sm:bg-transparent shadow
     sm:shadow-none">
   <div class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
-    <a href="{{ header.logoUrl | default('/') }}" class="no-underline hover:text-gray-600 hover:no-underline flex flex-row items-center space-x-2">
+    <a href="{{ header.logoUrl | default('/') }}" class="no-underline hover:text-primary-600 hover:no-underline flex flex-row items-center space-x-2">
       <img src="{{ header.logoPath }}" alt="{{ header.logoAlt }}" class="h-12 py-1"/>
       {% if header.logoText %}
-        <span class="text-gray-600 font-bold text-2xl">{{ header.logoText }}</span>
+        <span class="text-primary-600 font-bold text-2xl">{{ header.logoText }}</span>
       {% endif %}
     </a>
     <!-- Hamburger Button mit Tailwind -->
@@ -28,7 +28,7 @@
     class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-4 sm:py-0 hidden">
     <div class="flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-8 items-center w-full sm:w-auto">
       {% for item in header.menuItems %}
-        <a class="text-gray-800 font-bold hover:text-red-900 text-xl w-full sm:w-auto text-center" href="{{ item.url }}">
+        <a class="text-gray-800 font-bold hover:text-primary-900 text-xl w-full sm:w-auto text-center" href="{{ item.url }}">
           {{ item.text }}
         </a>
       {% endfor %}

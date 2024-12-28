@@ -4,10 +4,10 @@
             {% if not loop.first %}
                 <span class="hidden sm:inline mx-2">|</span>
             {% endif %}
-            <a href="{{ item.url }}" class="text-gray-800 hover:text-red-900">{{ item.title }}</a>
+            <a href="{{ item.url }}" class="text-gray-800 hover:text-primary-900">{{ item.title }}</a>
         {% endfor %}
     </div>
     <p class="pt-1 text-sm">&copy; {{ '' | year }} -
-        <a href="{{ footer.company.url }}" target="_blank" class="text-[#8E3F57] hover:text-red-900">{{ footer.company.name }}</a>
+        <a href="{{ footer.company.url }}" target="_blank" class="text-primary-600 hover:text-primary-900">{{ footer.company.name }}</a>
     </p>
 </footer>
