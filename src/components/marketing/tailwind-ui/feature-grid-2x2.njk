@@ -4,21 +4,21 @@
         <div class="mx-auto max-w-2xl lg:text-center">
             {# Overline #}
             {% if data.overline -%}
-                <h2 class="text-base/7 font-semibold text-highlight">
+                <h2 class="font-semibold text-highlight dark:text-highlight-dark">
                     {{ data.overline }}
                 </h2>
             {%- endif %}
 
             {# Headline #}
             {% if data.headline -%}
-                <p class="mt-2 text-4xl font-semibold tracking-tight text-content text-gray-900 sm:text-5xl lg:text-balance">
+                <p class="mt-2 text-4xl font-semibold tracking-tight text-content dark:text-content-dark sm:text-5xl lg:text-balance">
                     {{ data.headline }}
                 </p>
             {%- endif %}
 
             {# Description #}
             {% if data.description -%}
-                <p class="mt-6 text-lg/8 text-content-secondary">
+                <p class="mt-6 text-lg/8 text-content-secondary dark:text-content-secondary-dark">
                     {{ data.description }}
                 </p>
             {%- endif %}
@@ -31,16 +31,16 @@
                     {% for feature in data.features -%}
                         {% if feature.title and feature.description -%}
                             <div class="relative pl-16">
-                                <dt class="text-base/7 font-semibold text-content">
+                                <dt class="font-semibold text-content dark:text-content-dark">
                                     {# Icon Container #}
-                                    <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-background">
-                                        <svg class="size-6 text-highlight" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-background dark:bg-background-dark">
+                                        <svg class="size-6 text-highlight dark:text-highlight-dark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="{{ feature.icon }}"/>
                                         </svg>
                                     </div>
                                     {{ feature.title }}
                                 </dt>
-                                <dd class="mt-2 text-base/7 text-content-secondary">{{ feature.description }}</dd>
+                                <dd class="mt-2 text-content-secondary dark:text-content-secondary-dark">{{ feature.description }}</dd>
                             </div>
                         {%- endif %}
                     {%- endfor %}
