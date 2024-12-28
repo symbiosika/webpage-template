@@ -13,7 +13,7 @@ Alle Marketing Komponenten sind auf der Seite "Demo" als Beispiele zu finden.
 
 ## Basis Farben
 
-Die Farben sind in der Datei "tailwind.config.js" definiert.
+Die Farben sind in der Datei "src/defaults/colors.json" definiert.
 Ein guter Farbgenerator ist https://uicolors.app/create
 
 ## Variablen
