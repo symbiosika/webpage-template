@@ -48,3 +48,4 @@ Du wirst die Komponente aus folgendem Muster erstellen.
 Du wist dabei strikt die Optik beibehalten aber alle Inhalte dynamisieren.
 
 Muster:
+<...hier der html code des musters...>
