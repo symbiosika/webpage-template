@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="canonical" href="{{ config.url }}{{ page.url }}">
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/navbar.css">
+    <script src="/scripts/navbar.js"></script>
+    <title>
+      {% if title and title != 'Home' %}
+        {{ title }} -
+      {% endif %}
+      {{ config.siteTitle }}</title>
+    <!-- Icons -->
+    <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+    <link rel="apple-touch-icon" type="image/png" href="/images/logo.png"/>
+    <!-- Meta -->
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ config.description }}{% endif %}">
+    <meta name="keywords" content="{% if keywords %}{{ keywords }}{% else %}{{ config.keywords }}{% endif %}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="de">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <header>
+      {% include "navbar.njk" %}
+    </header>
+    <div>
+      {{ content | safe }}
+    </div>
+    {% include "footer.njk" %}
+  </body>
+</html>
