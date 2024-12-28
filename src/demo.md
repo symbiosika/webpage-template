@@ -105,6 +105,23 @@ data_feature_grid_2x2:
     - title: "Lorem ipsum 4"
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       icon: "M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
+# Team Members 1
+data_team_members_1:
+    title: "Meet our leadership"
+    description: "We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for     our clients."
+    team:
+      - name: "Leslie Alexander"
+        role: "Co-Founder / CEO"
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+      - name: "Michael Foster"
+        role: "Co-Founder / CTO"
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+      - name: "Sarah Brown"
+        role: "Chief Marketing Officer"
+        image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+      - name: "James Smith"
+        role: "Head of Sales"
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 ---
 
 ## Komponente "tailwind-ui/feature-section-1"
@@ -131,3 +148,9 @@ data_feature_grid_2x2:
 
 {% set data = data_feature_grid_2x2 %}
 {% include "marketing/tailwind-ui/feature-grid-2x2.njk" %}
+
+## Komponente "tailwind-ui/team-section-1"
+
+{% set data = data_team_members_1 %}
+{% include "marketing/tailwind-ui/team-section-1.njk" %}
+
