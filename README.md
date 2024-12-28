@@ -32,6 +32,18 @@ Alle Variablen für den Footer.
 
 Alle Variablen für den Header.
 
+
+## Langing Pages
+
+Landing pages können unter "src/landing" mit einer GUID als Ordnername oder Dateiname angelegt werden.
+Damit könnte man mehrere Projekte auf einer Seite anbieten.
+
+Die Demo lässt sich unter folgendem Link aufrufen:
+http://localhost:8081/landing/59bb1240-4cdd-4141-ba4e-a7d93fa5cd37/
+
+Landing Pages haben einen vereinfachten Header und Footer.
+
+
 ## Prompts
 
 ### Erstelle Komponenten über Tailwind UI Muster
