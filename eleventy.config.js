@@ -38,5 +38,8 @@ module.exports = function (config) {
       data: "defaults",
       output: "dist",
     },
+    serverOptions: {
+      port: 8081,
+    },
   };
 };
