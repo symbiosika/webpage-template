@@ -1,0 +1,111 @@
+<div class="relative min-h-[400px] rounded-xl overflow-hidden">
+  {%- if data.backgroundImage -%}
+  <div class="absolute inset-0">
+    <img
+      src="{{ data.backgroundImage }}"
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gray-900/70"></div>
+  </div>
+  {%- endif -%}
+  <div
+    class="relative z-10 px-6 py-12 sm:px-12 flex flex-col items-center text-center"
+  >
+    {# Question #}
+    <h3 class="text-2xl sm:text-3xl font-bold text-white mb-8">
+      {{ data.question }}
+    </h3>
+
+    {# Answers #}
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl"
+      id="answers-{{ data.id }}"
+    >
+      {%- for answer in data.answers -%}
+      <button
+        class="answer-btn px-6 py-4 rounded-lg bg-white/10 hover:bg-white/20 text-white border-2 border-transparent transition-all duration-300 hover:border-white/50"
+        data-correct="{{ answer.isCorrect }}"
+        onclick="handleAnswer(this, '{{ data.id }}')"
+      >
+        {{- answer.text -}}
+      </button>
+      {%- endfor -%}
+    </div>
+
+    {# Result Messages #}
+    <div
+      id="correct-message-{{ data.id }}"
+      class="hidden mt-5 flex flex-col items-center"
+    >
+      <p class="text-green-400 text-xl mb-4">{{ data.correctMessage }} 🎉</p>
+      <a
+        href="{{ data.interactionLink }}"
+        class="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300"
+      >
+        {{ data.interactionText }}
+      </a>
+    </div>
+
+    <div 
+      id="wrong-message-{{ data.id }}" 
+      class="hidden mt-8 flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
+      <p class="text-red-400 text-xl mb-4 mt-12">{{ data.wrongMessage }}</p>
+      <button
+        class="px-6 py-3 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-all duration-300"
+        onclick="resetQuiz('{{ data.id }}')"
+      >
+        {{ data.tryAgainText }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function handleAnswer(button, quizId) {
+    const isCorrect = button.getAttribute("data-correct") === "true";
+    const answersContainer = document.getElementById(`answers-${quizId}`);
+    const correctMessage = document.getElementById(`correct-message-${quizId}`);
+    const wrongMessage = document.getElementById(`wrong-message-${quizId}`);
+
+    // Disable all buttons
+    const buttons = answersContainer.getElementsByClassName("answer-btn");
+    Array.from(buttons).forEach((btn) => {
+      btn.disabled = true;
+      if (btn === button) {
+        btn.classList.add(isCorrect ? "border-green-500" : "border-red-500");
+      }
+    });
+
+    // Hide answers container in both cases
+    answersContainer.classList.add("hidden");
+
+    // Show appropriate message
+    if (isCorrect) {
+      correctMessage.classList.remove("hidden");
+      wrongMessage.classList.add("hidden");
+    } else {
+      wrongMessage.classList.remove("hidden");
+      correctMessage.classList.add("hidden");
+    }
+  }
+
+  function resetQuiz(quizId) {
+    const answersContainer = document.getElementById(`answers-${quizId}`);
+    const correctMessage = document.getElementById(`correct-message-${quizId}`);
+    const wrongMessage = document.getElementById(`wrong-message-${quizId}`);
+
+    // Reset and show buttons
+    const buttons = answersContainer.getElementsByClassName("answer-btn");
+    Array.from(buttons).forEach((btn) => {
+      btn.disabled = false;
+      btn.classList.remove("border-green-500", "border-red-500");
+    });
+    answersContainer.classList.remove("hidden"); // Show answers again
+
+    // Hide messages
+    correctMessage.classList.add("hidden");
+    wrongMessage.classList.add("hidden");
+  }
+</script>
