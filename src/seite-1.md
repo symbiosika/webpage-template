@@ -1,7 +1,7 @@
 ---
 title: Datenschutz
 description: Datenschutzerklärung
-layout: layout/header-content-footer_1.njk
+layout: layout/header-content-footer_2.njk
 # Daten für das Feature-Grid-2x2
 data:
   overline: "Lorem ipsum Overline"

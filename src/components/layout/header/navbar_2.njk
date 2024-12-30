@@ -1,0 +1,48 @@
+<nav class="flex flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-background-secondary dark:bg-background-secondary-dark shadow sm:shadow-none">
+  <!-- Logo -->
+  <a href="{{ header.logoUrl | default('/') }}" class="no-underline hover:text-highlight dark:hover:text-highlight-dark hover:no-underline flex flex-row items-center space-x-2">
+    <img src="{{ header.logoPath }}" alt="{{ header.logoAlt }}" class="h-12 py-1"/>
+    {% if header.logoText %}
+      <span class="text-highlight dark:text-highlight-dark font-bold text-2xl">{{ header.logoText }}</span>
+    {% endif %}
+  </a>
+
+  <!-- Navigation Links und Dark Mode Toggle -->
+  <div class="flex flex-row items-center space-x-8">
+    <a href="#" class="relative group px-4 py-2 text-sm no-underline hover:no-underline">
+      <span class="relative z-10" style="background: linear-gradient(to right, {{ colors.gradient.green_to_blue.from }}, {{ colors.gradient.green_to_blue.to }}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Jetzt kostenlos testen</span>
+      <div class="absolute inset-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg" style="background: linear-gradient(to right, {{ colors.gradient.green_to_blue.from }}10, transparent, {{ colors.gradient.green_to_blue.to }}10);"></div>
+    </a>
+    <a href="#" class="relative group px-4 py-2 text-sm no-underline hover:no-underline">
+      <span class="relative z-10" style="background: linear-gradient(to right, {{ colors.gradient.green_to_blue.from }}, {{ colors.gradient.green_to_blue.to }}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Log-In</span>
+      <div class="absolute inset-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg" style="background: linear-gradient(to right, {{ colors.gradient.green_to_blue.from }}10, transparent, {{ colors.gradient.green_to_blue.to }}10);"></div>
+    </a>
+    <a href="#" class="relative group px-4 py-2 text-sm no-underline hover:no-underline">
+      <span class="relative z-10" style="background: linear-gradient(to right, {{ colors.gradient.green_to_blue.from }}, {{ colors.gradient.green_to_blue.to }}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Demo</span>
+      <div class="absolute inset-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg" style="background: linear-gradient(to right, {{ colors.gradient.green_to_blue.from }}10, transparent, {{ colors.gradient.green_to_blue.to }}10);"></div>
+    </a>
+    <button
+      id="darkModeToggle"
+      class="w-8 h-8 flex items-center justify-center text-content dark:text-content-dark hover:text-highlight dark:hover:text-highlight-dark"
+      onclick="document.body.classList.toggle('dark');
+               localStorage.setItem('darkMode', document.body.classList.contains('dark'));"
+      aria-label="Toggle Dark Mode">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Add this script to initialize dark mode based on user preference -->
+<script>
+  if (localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document
+      .body
+      .classList
+      .add('dark');
+  }
+</script>
