@@ -1,0 +1,28 @@
+<section class="relative">
+  <div class="relative isolate px-6 pt-4 lg:px-8">
+    {# Hero Background Image #}
+    <div class="absolute inset-0 -z-20">
+      <img src="{{ data.image }}" alt="" class="h-full w-full object-cover" aria-hidden="true">
+    </div>
+
+    {# Main Content #}
+    <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14">
+      {% if data.announcement %}
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="relative rounded-full px-3 py-1 text-sm/6 text-content-contrast-secondary dark:text-content-contrast-secondary-dark ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+          {{ data.announcement.text }} <a href="{{ data.announcement.link.url }}" class="font-semibold text-highlight dark:text-highlight-dark"><span class="absolute inset-0" aria-hidden="true"></span>{{ data.announcement.link.label }} <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="text-center">
+        <h1 class="text-balance text-5xl font-semibold tracking-tight text-content-contrast dark:text-content-contrast-dark sm:text-7xl">{{ data.hero.title }}</h1>
+        <p class="mt-8 text-pretty text-lg font-medium text-content-contrast-secondary dark:text-content-contrast-secondary-dark sm:text-xl/8">{{ data.hero.description }}</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="{{ data.hero.primaryButton.url }}" class="rounded-md bg-highlight dark:bg-highlight-dark px-3.5 py-2.5 text-sm font-semibold text-black dark:text-black shadow-sm hover:bg-highlight-secondary dark:hover:bg-highlight-secondary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight dark:focus-visible:outline-highlight-dark">{{ data.hero.primaryButton.label }}</a>
+          <a href="{{ data.hero.secondaryButton.url }}" class="text-sm/6 font-semibold text-content-contrast dark:text-content-contrast-dark">{{ data.hero.secondaryButton.label }} <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

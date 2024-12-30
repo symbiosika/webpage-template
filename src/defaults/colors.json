@@ -15,6 +15,14 @@
     "DEFAULT": "#4b4b4b",
     "dark": "#f8f9fa"
   },
+  "content-contrast": {
+    "DEFAULT": "#ffffff",
+    "dark": "#1a1a1a"
+  },
+  "content-contrast-secondary": {
+    "DEFAULT": "#e7e7e7",
+    "dark": "#1a1a1a"
+  },
   "highlight": {
     "DEFAULT": "#8d3f57",
     "dark": "#8d3f57"
@@ -22,5 +30,11 @@
   "highlight-secondary": {
     "DEFAULT": "#454545",
     "dark": "#f8f9fa"
+  },
+  "gradient": {
+    "green_to_blue": {
+      "from": "#1df4a3",
+      "to": "#1d93f4"
+    }
   }
 }

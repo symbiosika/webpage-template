@@ -122,6 +122,24 @@ data_team_members_1:
       - name: "James Smith"
         role: "Head of Sales"
         image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+
+# marketing/tailwind-ui/marketing-hero_picture
+data_marketing_hero_picture:
+  image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+  announcement:
+    text: "Ankündigung unserer neuesten Innovation"
+    link:
+      label: "Mehr erfahren"
+      url: "/news"
+  hero:
+    title: "Die schnellste Lösung, um Minijobber und Kurzbeschäftigte anzumelden"
+    description: "Sparen Sie Zeit, Geld und Nerven: Mit fastjobon erledigen Sie die gesamte Bürokratie digital und in Minuten. So können Sie sich voll und ganz auf Ihr Kerngeschäft konzentrieren – wir übernehmen den Rest."
+    primaryButton:
+      label: "Jetzt kostenfrei testen"
+      url: "/start"
+    secondaryButton:
+      label: "Mehr erfahren"
+      url: "/learn-more"
 ---
 
 ## Komponente "tailwind-ui/feature-section-1"
@@ -154,3 +172,12 @@ data_team_members_1:
 {% set data = data_team_members_1 %}
 {% include "marketing/tailwind-ui/team-section-1.njk" %}
 
+## Komponente "marketing/tailwind-ui/marketing-hero_picture"
+
+{% set data = data_marketing_hero_picture %}
+{% include "marketing/tailwind-ui/marketing-hero_picture.njk" %}
+
+## Komponente "marketing/tailwind-ui/marketing-hero_gradient"
+
+{% set data = data_marketing_hero_picture %}
+{% include "marketing/tailwind-ui/marketing-hero_gradient.njk" %}
