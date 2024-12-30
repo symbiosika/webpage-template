@@ -140,6 +140,40 @@ data_marketing_hero_picture:
     secondaryButton:
       label: "Mehr erfahren"
       url: "/learn-more"
+
+# hero-section-1
+data_hero_section_1:
+  subtitle: "Machen Sie Ihr Unternehmen startklar für die"
+  title: "Nutzung von Künstlicher Intelligenz (KI)"
+  description: "Wir unterstützen Sie bei der Einführung von KI in Ihr Unternehmen. Von Workshops und Trainings, über Möglichkeiten und Chancen, bis hin zu konkreten Implementierungen."
+
+# bento-grid-2
+data_bento_grid_2:
+  title: "Wir unterstützen Sie bei der Einführung von KI in Ihr Unternehmen."
+  description: "KI verändert die Art und Weise wie wir arbeiten"
+  images:
+    - "https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
+    - "https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+    - "https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+    - "https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+    - "https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+
+# contact-1
+data_contact_1:
+  image: "https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+  imageAlt: "Contact Image"
+  title: "Nehmen Sie gerne Kontakt mit uns auf"
+  description: "Wir freuen uns darauf, von Ihnen zu hören! Ob Sie Fragen haben, ein Projekt besprechen oder einfach mehr über unsere Dienstleistungen erfahren möchten - wir sind für Sie da."
+  features:
+    - "Schnelle Antwortzeiten"
+    - "Persönliche Beratung"
+    - "Flexible Terminvereinbarung"
+    - "Individuelle Lösungen"
+  buttons:
+    - url: "/kontakt"
+      label: "Jetzt Kontakt aufnehmen"
+    - url: "/kontakt"
+      label: "Mehr erfahren"
 ---
 
 ## Komponente "tailwind-ui/feature-section-1"
@@ -181,3 +215,20 @@ data_marketing_hero_picture:
 
 {% set data = data_marketing_hero_picture %}
 {% include "marketing/tailwind-ui/marketing-hero_gradient.njk" %}
+
+## Komponente "marketing/tailwind-ui/hero-section-1"
+
+{% set data = data_hero_section_1 %}
+{% include "marketing/tailwind-ui/hero-section-1.njk" %}
+
+## Komponente "marketing/tailwind-ui/bento-grid-2"
+
+{% set data = data_bento_grid_2 %}
+{% include "marketing/tailwind-ui/bento-grid-2.njk" %}
+
+## Komponente "marketing/tailwind-ui/contact-1"
+
+{% set data = data_contact_1 %}
+{% include "marketing/tailwind-ui/contact-1.njk" %}
+
+
