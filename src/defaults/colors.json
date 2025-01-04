@@ -23,6 +23,14 @@
     "DEFAULT": "#e7e7e7",
     "dark": "#1a1a1a"
   },
+  "content-always-light": {
+    "DEFAULT": "#ffffff",
+    "dark": "#ffffff"
+  },
+  "content-always-dark": {
+    "DEFAULT": "#1a1a1a",
+    "dark": "#1a1a1a"
+  },
   "highlight": {
     "DEFAULT": "#8d3f57",
     "dark": "#8d3f57"

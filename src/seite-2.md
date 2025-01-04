@@ -36,7 +36,7 @@ Hier kann auch HTML direk rein
 
 <p class="text-blue-500">Das ist ein p mit einer Klasse von Tailwind</p>
 
-## Komponente "marketing/interaction/quiz_game_1"
+## Komponente "interaction/quiz_game_1"
 
 {% set data = data_quiz_game_1 %}
-{% include "marketing/interaction/quiz_game_1.njk" %}
+{% include "interaction/quiz_game_1.njk" %}

@@ -15,6 +15,10 @@
     {
       "text": "Demo",
       "url": "/demo"
+    },
+    {
+      "text": "Demo 2",
+      "url": "/demo-2"
     }
   ]
 }

@@ -1,0 +1,72 @@
+<section class="relative">
+  <div class="relative isolate px-6 pt-4 lg:px-8">
+    {# Hero Background Image #}
+    <div class="absolute inset-0 -z-20">
+      <video src="{{ data.background.videoUrl }}" alt="" class="h-full w-full object-cover" aria-hidden="true" autoplay loop muted playsinline></video>
+    </div>
+
+    {# Effect #}
+    <div class="absolute inset-0 -z-10">
+      <div class="disco-lights h-full w-full opacity-40"></div>
+    </div>
+
+    {# Blur #}
+    <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-background dark:to-background-dark"></div>
+
+    {# Main Content #}
+    <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14 relative">
+      {% if data.announcement %}
+      <div class="flex mb-8 justify-center">
+        <div class="relative rounded-full bg-highlight/10 dark:bg-highlight-dark/10 px-4 py-2 text-[clamp(12px,2.5vw,16px)] text-content-always-light dark:text-content-always-light-dark">
+          <span class="inline-flex items-center gap-x-2 whitespace-nowrap">
+            <span class="inline-flex items-center justify-center rounded-md bg-highlight dark:bg-highlight-dark px-2.5 py-1 text-[clamp(11px,2.2vw,14px)] font-medium text-black dark:text-black leading-none">{{ data.announcement.chip }}</span>
+            {{ data.announcement.text }} 
+            <a href="#features" class="font-semibold text-highlight dark:text-highlight-dark">
+              <span class="absolute inset-0" aria-hidden="true"></span>
+              {{ data.announcement.link.label }} 
+              <span aria-hidden="true" class="text-[clamp(14px,3vw,18px)]">&rarr;</span>
+            </a>
+          </span>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="text-center">
+        <h1 class="text-balance text-6xl font-bold tracking-tight text-content-always-light dark:text-content-always-light-dark sm:text-8xl">{{ data.hero.title }}</h1>
+        <p class="mt-10 text-pretty text-xl font-medium text-content-always-light dark:text-content-always-light-dark sm:text-2xl/8">{{ data.hero.description }}</p>
+        <div class="mt-12 flex items-center justify-center gap-x-8">
+          <a href="{{ data.hero.primaryButton.url }}" class="rounded-lg bg-highlight dark:bg-highlight-dark px-6 py-3.5 text-base font-semibold text-black dark:text-black shadow-sm hover:bg-highlight-secondary dark:hover:bg-highlight-secondary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight dark:focus-visible:outline-highlight-dark">{{ data.hero.primaryButton.label }}</a>
+          <a href="{{ data.hero.secondaryButton.url }}" class="rounded-lg bg-highlight dark:bg-highlight-dark px-6 py-3.5 text-base font-semibold text-black dark:text-black shadow-sm hover:bg-highlight-secondary dark:hover:bg-highlight-secondary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight dark:focus-visible:outline-highlight-dark">
+            <div class="flex items-center gap-x-2">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              {{ data.hero.secondaryButton.label }}
+            </div>
+          </a>
+        </div>
+        
+        <div class="mt-12 flex justify-center gap-x-12">
+          <div class="flex items-center gap-x-3">
+            <svg class="h-6 w-6 text-highlight dark:text-highlight-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span class="text-base text-content-always-light dark:text-content-always-light-dark">{{ data.hero.features[0] }}</span>
+          </div>
+          <div class="flex items-center gap-x-3">
+            <svg class="h-6 w-6 text-highlight dark:text-highlight-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span class="text-base text-content-always-light dark:text-content-always-light-dark">{{ data.hero.features[1] }}</span>
+          </div>
+          <div class="flex items-center gap-x-3">
+            <svg class="h-6 w-6 text-highlight dark:text-highlight-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span class="text-base text-content-always-light dark:text-content-always-light-dark">{{ data.hero.features[2] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

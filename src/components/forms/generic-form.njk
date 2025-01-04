@@ -1,0 +1,235 @@
+{% macro renderField(field, primaryColor) %}
+  <div class="form-field">
+    <label for="{{ field.key }}" class="block text-sm font-medium text-content mb-2">
+      {{ field.label }}
+      {%- if field.required -%}
+        <span class="text-[{{ primaryColor }}]">*</span>
+      {%- endif -%}
+    </label>
+
+    {%- if field.description and field.description | string | trim -%}
+      <p class="text-xs text-content/70 mb-2">{{ field.description }}</p>
+    {%- endif -%}
+
+    {%- if field.type == 'textarea' -%}
+      <textarea
+        name="{{ field.key }}"
+        id="{{ field.key }}"
+        rows="{{ field.rows | default(4) }}"
+        {%- if field.required %} required {% endif -%}
+        {%- if field.pattern %} pattern="{{ field.pattern }}" {% endif -%}
+        class="w-full rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-content shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[{{ primaryColor }}]"
+      ></textarea>
+    {%- elseif field.type == 'checkbox' -%}
+      <div class="flex items-center space-x-3">
+        <input
+          type="checkbox"
+          name="{{ field.key }}"
+          id="{{ field.key }}"
+          {%- if field.required %} required {% endif -%}
+          class="h-4 w-4 rounded border-white/10 bg-white/5 text-[{{ primaryColor }}] focus:ring-[{{ primaryColor }}]"
+        >
+        <label for="{{ field.key }}" class="text-xs text-content">{{ field.label }}</label>
+      </div>
+    {%- else -%}
+      <input
+        type="{{ field.type | default('text') }}"
+        name="{{ field.key }}"
+        id="{{ field.key }}"
+        {%- if field.required %} required {% endif -%}
+        {%- if field.pattern %} pattern="{{ field.pattern }}" {% endif -%}
+        {%- if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif -%}
+        class="w-full rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-content shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[{{ primaryColor }}]"
+      >
+    {%- endif -%}
+  </div>
+{% endmacro %}
+
+<div id="{{ data.id | default('contact-form') }}" class="relative isolate px-6 py-24 sm:py-32 lg:px-8">
+  <!-- Gradient Hintergrund -->
+  <div class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
+    <div class="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#D71362] to-[#CB01F3] opacity-30" 
+         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
+
+  <!-- Formular Container -->
+  <div class="relative mx-auto max-w-2xl bg-white/10 rounded-3xl shadow-2xl p-8">
+    <!-- Blur Hintergrund -->
+    <div class="absolute inset-0 -z-10 backdrop-blur-sm rounded-3xl"></div>
+    
+    <!-- Success Message -->
+    <div id="success-message-{{ data.id }}" class="hidden">
+      <div class="flex flex-col items-center justify-center text-center space-y-6">
+        <div class="rounded-full bg-[{{ data.primaryColor | default('#D71362') }}]/10 p-3">
+          <svg class="w-24 h-24 text-[{{ data.primaryColor | default('#D71362') }}] animate-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-content">{{ data.successTitle }}</h3>
+        <p class="text-content/70">{{ data.successMessage }}</p>
+      </div>
+    </div>
+
+    <!-- Dynamic Form -->
+    <form id="form-{{ data.id }}" class="space-y-6">
+      {%- for row in data.fields %}
+        {%- if row.columns.length > 1 %}
+          <!-- Multi-column row -->
+          <div class="space-y-6 sm:space-y-0 sm:flex sm:flex-row sm:items-start sm:gap-6">
+            {%- for entry in row.columns %}
+              <div class="w-full sm:flex-1">
+                {{ renderField(entry, data.primaryColor) }}
+              </div>
+            {%- endfor %}
+          </div>
+        {%- else %}
+          <!-- Single column -->
+          <div class="w-full">
+            {{ renderField(row.columns[0], data.primaryColor) }}
+          </div>
+        {%- endif %}
+      {%- endfor %}
+
+      <!-- Submit Button -->
+      <button type="submit"
+              class="w-full rounded-md bg-[{{ data.primaryButtonColor }}] hover:bg-[{{ data.secondaryButtonColor }}] px-4 py-3 text-sm font-semibold text-content shadow-sm transition-all duration-300">
+        {{ data.submitText | default('Submit') }}
+      </button>
+    </form>
+  </div>
+</div>
+
+<style>
+.flatpickr-calendar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  position: absolute !important;
+  z-index: 999 !important;
+  margin: 5px 0 !important;
+}
+
+.flatpickr-day {
+  color: white !important;
+}
+
+.flatpickr-day.selected {
+  background: #D71362 !important;
+  border-color: #D71362 !important;
+}
+
+.flatpickr-day:hover {
+  background: rgba(215, 19, 98, 0.5) !important;
+}
+
+.flatpickr-day.today {
+  border-color: #D71362 !important;
+}
+
+.flatpickr-months .flatpickr-month,
+.flatpickr-weekdays {
+  color: white !important;
+  fill: white !important;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  color: white !important;
+}
+
+.flatpickr-current-month input.cur-year {
+  color: white !important;
+}
+
+@keyframes success-check {
+  0% {
+    stroke-dasharray: 0, 100;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    stroke-dasharray: 100, 100;
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    stroke-dasharray: 100, 100;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-success {
+  animation: success-check 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flatpickr-wrapper {
+  width: 100% !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('form-{{ data.id }}');
+  const successMessage = document.getElementById('success-message-{{ data.id }}');
+
+  const German = {
+    weekdays: {
+      shorthand: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+      longhand: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
+    },
+    months: {
+      shorthand: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+      longhand: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+    },
+    firstDayOfWeek: 1,
+    rangeSeparator: " bis ",
+    weekAbbreviation: "KW",
+    scrollTitle: "Zum Ändern scrollen",
+    toggleTitle: "Zum Umschalten klicken",
+    time_24hr: true
+  };
+
+  // Datepicker Initialization
+  {%- for row in data.fields %}
+    {%- for field in row.columns %}
+      {%- if field.type === 'date' %}
+        flatpickr("#{{ field.key }}", {
+          dateFormat: "d.m.Y",
+          locale: German,
+          minDate: "today",
+          disableMobile: true,
+          theme: "dark",
+          position: "auto",
+          monthSelectorType: "static",
+          nextArrow: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>',
+          prevArrow: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>',
+          appendTo: form.parentElement,
+          static: true
+        });
+      {%- endif %}
+    {%- endfor %}
+  {%- endfor %}
+
+  // Form submission handling
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // get all data as JSON
+    const formData = new FormData(form);
+    const formDataJSON = JSON.stringify(Object.fromEntries(formData.entries()));
+    console.log("formDataJSON: ", formDataJSON);
+    
+    // Hier kommt Ihre Form-Verarbeitung
+    // Nach erfolgreicher Verarbeitung:
+    
+    form.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+    setTimeout(() => {
+      form.style.display = 'none';
+      successMessage.classList.remove('hidden');
+      successMessage.classList.add('animate-fade-in');
+    }, 300);
+  });
+});
+</script>
