@@ -129,6 +129,41 @@ data_download_banner:
 contact_form_data:
   title: "Kontaktieren Sie uns"
   description: "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+
+# tailwind-ui/pricing-1
+data_pricing_1:
+  title: "Pricing"
+  headline: "Choose the right plan for you"
+  description: "Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales."
+  plans:
+    - id: "hobby"
+      name: "Hobby"
+      price: "$29"
+      interval: "/month"
+      description: "The perfect plan if you're just getting started with our product."
+      features:
+        - "25 products"
+        - "Up to 10,000 subscribers"
+        - "Advanced analytics"
+        - "24-hour support response time"
+      ctaText: "Get started today"
+      ctaLink: "#"
+      featured: false
+    - id: "enterprise"
+      name: "Enterprise"
+      price: "$99"
+      interval: "/month"
+      description: "Dedicated support and infrastructure for your company."
+      features:
+        - "Unlimited products"
+        - "Unlimited subscribers"
+        - "Advanced analytics"
+        - "Dedicated support representative"
+        - "Marketing automations"
+        - "Custom integrations"
+      ctaText: "Get started today"
+      ctaLink: "#"
+      featured: true
 ---
 
 ## Komponente "tailwind-ui/marketing-hero_movie"
@@ -158,3 +193,7 @@ contact_form_data:
 ## Komponente "tailwind-ui/download-banner"
 {% set data = data_download_banner %}
 {% include "marketing/tailwind-ui/download-banner.njk" %}
+
+## Komponente "pricing/pricing-1"
+{% set data = data_pricing_1 %}
+{% include "pricing/pricing-1.njk" %}
