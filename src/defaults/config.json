@@ -8,5 +8,8 @@
     "png16": "/images/logo.png",
     "png32": "/images/logo.png",
     "ico": "/images/logo.png"
+  },
+  "logo": {
+    "main": "/images/logo.png"
   }
 }

@@ -16,9 +16,9 @@ Wenn neue globale Styles, Icons, etc. benötigt werden, sollte diese Datei erwei
       {% endif %}
       {{ config.siteTitle }}</title>
     <!-- Icons -->
-    <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+    <link rel="shortcut icon" type="image/png" href="{{ config.logo.main }}"/>
     <link
-    rel="apple-touch-icon" type="image/png" href="/images/logo.png"/>
+    rel="apple-touch-icon" type="image/png" href="{{ config.logo.main }}"/>
     <!-- Meta -->
     <meta name="description" content="{% if description %}{{ description }}{% else %}{{ config.description }}{% endif %}">
     <meta name="keywords" content="{% if keywords %}{{ keywords }}{% else %}{{ config.keywords }}{% endif %}">

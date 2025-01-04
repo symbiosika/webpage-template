@@ -11,16 +11,16 @@
         />
         <div class="w-full flex-auto">
           <h2
-            class="text-pretty text-4xl font-semibold tracking-tight text-gray-600 sm:text-5xl"
+            class="text-pretty text-4xl font-semibold tracking-tight text-content dark:text-content-dark sm:text-5xl"
           >
             {{ data.title }}
           </h2>
-          <p class="mt-6 text-pretty text-lg/8 text-gray-600">
+          <p class="mt-6 text-pretty text-lg/8 text-content-secondary dark:text-content-secondary-dark">
             {{ data.description }}
           </p>
           <ul
             role="list"
-            class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-600 sm:grid-cols-2"
+            class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-content-secondary dark:text-content-secondary-dark sm:grid-cols-2"
           >
             {% for feature in data.features -%}
             <li class="flex gap-x-3">
@@ -46,7 +46,7 @@
             <a
               href="{{ button.url }}"
               target="_blank"
-              class="rounded-md bg-[#8E3F57] text-white px-6 py-3 text-sm/6 font-semibold hover:bg-[#8E3F57]/80"
+              class="rounded-md bg-highlight dark:bg-highlight-dark text-white px-6 py-3 text-sm/6 font-semibold hover:bg-highlight/80 dark:hover:bg-highlight-dark/80"
             >
               {{ button.label }}
             </a>
@@ -60,7 +60,7 @@
       aria-hidden="true"
     >
       <div
-        class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#8E3F57] to-[#CC8890] opacity-15"
+        class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-highlight to-highlight/50 dark:from-highlight-dark dark:to-highlight-dark/50 opacity-15"
         style="
           clip-path: polygon(
             73.6% 51.7%,
