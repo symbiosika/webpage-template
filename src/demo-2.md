@@ -87,6 +87,48 @@ data_forms_generic_form:
         type: checkbox
         label: "Ich habe die Datenschutzerklärung zur Kenntnis genommen."
         required: true
+
+# tailwind-ui/testimonial-simple
+data_testimonial_simple:
+  overline: "Kundenstimmen"
+  headline: "Was unsere Kunden über uns sagen"
+  description: "Erfahren Sie aus erster Hand, wie unsere Kunden von unseren Dienstleistungen profitieren und welche Erfahrungen sie mit uns gemacht haben."
+
+# tailwind-ui/slider-with-phone
+data_feature_two_col:
+  title: "Unsere App macht den Unterschied"
+  description: "Mit unserer innovativen Mobile-App haben Sie alle wichtigen Funktionen immer griffbereit. Verwalten Sie Ihre Buchungen, checken Sie den Status und bleiben Sie mit uns in Kontakt."
+  cta:
+    label: "App herunterladen"
+    url: "/app"
+  phone:
+    image: "/images/logo.png"
+    alt: "Screenshot unserer Mobile App"
+
+# tailwind-ui/logo-slider
+data_logo_slider:
+  title: ""
+  description: ""
+  logos:
+    - src: "https://placehold.co/200x100/png?text=Partner+1"
+      alt: "Partner 1"
+    - src: "https://placehold.co/200x100/png?text=Partner+2"
+      alt: "Partner 2"
+    - src: "https://placehold.co/200x100/png?text=Partner+3"
+      alt: "Partner 3"
+    - src: "https://placehold.co/200x100/png?text=Partner+4"
+      alt: "Partner 4"
+
+# tailwind-ui/download-banner
+data_download_banner:
+  title: "Jetzt kostenlosen Guide herunterladen"
+  cta:
+    label: "Guide herunterladen"
+    url: "#download-form"
+
+contact_form_data:
+  title: "Kontaktieren Sie uns"
+  description: "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
 ---
 
 ## Komponente "tailwind-ui/marketing-hero_movie"
@@ -94,7 +136,25 @@ data_forms_generic_form:
 {% set data = data_marketing_hero_movie %}
 {% include "marketing/tailwind-ui/marketing-hero_movie.njk" %}
 
+## Komponente "tailwind-ui/testimonial-simple"
+
+{% set data = data_testimonial_simple %}
+{% include "marketing/tailwind-ui/testimonial-simple.njk" %}
+
 ## Komponente "forms/generic-form"
 
 {% set data = data_forms_generic_form %}
 {% include "forms/generic-form.njk" %}
+
+## Komponente "tailwind-ui/feature-two-col"
+
+{% set data = data_feature_two_col %}
+{% include "marketing/tailwind-ui/feature-two-col.njk" %}
+
+## Komponente "tailwind-ui/logo-slider"
+{% set data = data_logo_slider %}
+{% include "marketing/tailwind-ui/logo-slider.njk" %}
+
+## Komponente "tailwind-ui/download-banner"
+{% set data = data_download_banner %}
+{% include "marketing/tailwind-ui/download-banner.njk" %}

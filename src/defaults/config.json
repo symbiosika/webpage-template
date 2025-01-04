@@ -3,5 +3,10 @@
   "url": "https://website-template.de",
   "description": "Website Template",
   "keywords": "Website Template",
-  "language": "de"
+  "language": "de",
+  "favicon": {
+    "png16": "/images/logo.png",
+    "png32": "/images/logo.png",
+    "ico": "/images/logo.png"
+  }
 }

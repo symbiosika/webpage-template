@@ -83,7 +83,7 @@ data:
 Du wirst die Komponente aus folgendem Muster erstellen.
 Du wist dabei strikt die Optik beibehalten aber alle Inhalte dynamisieren.
 
-Alle Farben basieren auf den Textfarben:
+Alle Farben basieren folgenden Regeln:
 
 Light: "text-content" und "text-content-secondary"
 Dark: "dark:text-content-dark" und "dark:text-content-secondary-dark"
@@ -95,6 +95,10 @@ Dark: "dark:text-highlight-dark" und "dark:text-highlight-secondary-dark"
 Falls Hintergrundfarben benötigt werden, dann:
 Light: "bg-background" und "bg-background-secondary"
 Dark: "dark:bg-background-dark" und "dark:bg-background-secondary-dark"
+
+Explizite helle und dunkle Textfarben:
+Light: "text-content-always-light" und "text-content-secondary-always-light"
+Dark: "dark:text-content-always-dark" und "dark:text-content-secondary-always-dark"
 
 Hintergrundfarben müssen nur angegeben werden, wenn sich der Hintergrund explizit unterscheiden muss.
 Der Default kommt aus dem Parent.
