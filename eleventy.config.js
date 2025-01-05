@@ -7,9 +7,6 @@ module.exports = function (config) {
   // Pass-through other static files
   config.addPassthroughCopy({ "./src/static": "/" });
 
-  // Pass-through js files
-  config.addPassthroughCopy({ "./src/scripts": "/scripts" });
-
   // Add Date filters
   config.addFilter("date", (dateObj) => {
     return dayjs(dateObj).format("MMMM D, YYYY");
@@ -28,6 +25,17 @@ module.exports = function (config) {
     return collections.getFilteredByTag("page").sort(function (a, b) {
       return a.data.order - b.data.order;
     });
+  });
+
+  // Handle .njk files in src/scripts directory as JS files
+  config.addExtension("js.njk", {
+    outputFileExtension: "js",
+    templateEngine: "njk",
+    compile: function (content, inputPath) {
+      return function (data) {
+        return this.defaultRenderer(content, inputPath, data);
+      };
+    },
   });
 
   return {

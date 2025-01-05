@@ -11,5 +11,7 @@
   },
   "logo": {
     "main": "/images/logo.png"
-  }
+  },
+  "_googleAnalyticsId": "G-xxx",
+  "_facebookPixelId": "xxx"
 }
