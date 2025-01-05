@@ -10,12 +10,13 @@ Wenn neue globale Styles, Icons, etc. benötigt werden, sollte diese Datei erwei
     <!-- flatpickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
+
     {# Google Analytics Script Tag #}
     {% if config.googleAnalyticsId %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.googleAnalyticsId }}"></script>
     <script src="/scripts/cookie-consent.js"></script>
     {% endif %}
-    
+
     <title>
       {% if title and title != 'Home' %}
         {{ title }} -
