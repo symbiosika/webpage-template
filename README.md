@@ -7,6 +7,20 @@ npm install
 npm run dev
 ```
 
+## Konfigurator
+
+Es gibt einen kleinen grafischen Konfigurator, der via Pyhton gestartet werden kann.
+Pyhton muss installiert sein.
+
+```bash
+cd configurator
+py -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+
+py main.py
+```
+
 ## Komponenten
 
 Alle Marketing Komponenten sind auf der Seite "Demo" als Beispiele zu finden.

@@ -1,0 +1,51 @@
+{% macro render_form(data, parent_key='') %}
+    {% for key, value in data.items() %}
+        {% set full_key = parent_key + '.' + key if parent_key else key %}
+        {% if value is mapping %}
+            <div class="mb-3">
+                <label class="form-label"><strong>{{ key }}</strong></label>
+                <div class="nested">
+                    {{ render_form(value, full_key) }}
+                </div>
+            </div>
+        {% elif value is iterable and not value is string %}
+            <div class="mb-3">
+                <label class="form-label"><strong>{{ key }}</strong></label>
+                <div class="nested">
+                    {% for idx, item in enumerate(value) %}
+                        <div class="list-item">
+                            <label class="form-label">Item {{ idx + 1 }}</label>
+                            {% if item is mapping %}
+                                {{ render_form(item, full_key + '.' + idx|string) }}
+                            {% else %}
+                                <input type="text" class="form-control" name="{{ full_key }}.{{ idx }}" value="{{ item }}">
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% else %}
+            <div class="mb-3">
+                <label for="{{ full_key }}" class="form-label">{{ key }}</label>
+                {% if value is string and value|regex_match('^#(?:[0-9a-fA-F]{3}){1,2}$') %}
+                    <div class="input-group">
+                        <input type="color" class="form-control form-control-color" 
+                               id="{{ full_key }}_color" 
+                               value="{{ value }}"
+                               onchange="document.getElementById('{{ full_key }}').value = this.value">
+                        <input type="text" class="form-control" 
+                               id="{{ full_key }}" 
+                               name="{{ full_key }}" 
+                               value="{{ value }}"
+                               pattern="^#(?:[0-9a-fA-F]{3}){1,2}$">
+                    </div>
+                {% else %}
+                    <input type="text" class="form-control" 
+                           id="{{ full_key }}" 
+                           name="{{ full_key }}" 
+                           value="{{ value }}">
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endmacro %} 
