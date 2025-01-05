@@ -19,14 +19,14 @@ function getCookie(name) {
 }
 
 // Initialize Google Analytics
-function initializeGoogleAnalytics() {
-  console.log("Google Analytics activated");
+function initializeGoogleAnalytics() {  
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
   gtag("js", new Date());
   gtag("config", "{% endraw %}{{ config.googleAnalyticsId }}{% raw %}");
+  console.log("Google Analytics activated");
 }
 
 // Cookie-Banner Funktionen
